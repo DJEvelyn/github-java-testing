@@ -7,6 +7,9 @@ public class main {
 		
 		System.out.println("Git Testing project has just started"); 
 
+		System.out.println("This is the second message");
+
+		System.out.println("This is a third message");
 	}
 
 }
