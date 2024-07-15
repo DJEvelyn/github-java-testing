@@ -5,11 +5,18 @@ public class main {
 	{
 		// TODO Auto-generated method stub
 		
-		System.out.println("Git Testing project has just started"); 
-
-		System.out.println("This is the second message");
-
-		System.out.println("This is a third message");
+		TestObject testObject = new TestObject("One"); 
+		
+		
+	}
+	
+	private static void adjustTestObject(TestObject given)
+	{
+		System.out.println("Adjusting test object " + given.getName() + "\n");
+		
+		System.out.println("Current value is " + given.getValue()); 
+		
+		
 	}
 
 }
