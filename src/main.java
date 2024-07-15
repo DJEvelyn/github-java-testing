@@ -5,6 +5,8 @@ public class main {
 	{
 		// TODO Auto-generated method stub
 		
+		System.out.println("Git Testing project has just started"); 
+
 		TestObject testObject = new TestObject("One"); 
 		
 		
