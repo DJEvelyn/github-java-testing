@@ -16,7 +16,7 @@ public class main {
 		
 		System.out.println("Current value is " + given.getValue() + "\n"); 
 		
-		int changedValue = given.getValue() + 5; 
+		int changedValue = given.getValue() + 8; 
 		
 		System.out.println("Changed value is " + changedValue + "\n"); 
 	}
