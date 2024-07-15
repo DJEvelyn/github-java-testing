@@ -14,9 +14,11 @@ public class main {
 	{
 		System.out.println("Adjusting test object " + given.getName() + "\n");
 		
-		System.out.println("Current value is " + given.getValue()); 
+		System.out.println("Current value is " + given.getValue() + "\n"); 
 		
+		int changedValue = given.getValue() + 5; 
 		
+		System.out.println("Changed value is " + changedValue + "\n"); 
 	}
 
 }
