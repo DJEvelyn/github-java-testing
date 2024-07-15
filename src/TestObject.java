@@ -32,6 +32,9 @@ public class TestObject implements Named
 		}
 	}
 	
+	@Override
+	public String toString() { return getName(); } 
+	
 	
 	public enum VALUE_TYPE
 	{

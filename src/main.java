@@ -26,18 +26,25 @@ public class main {
 		TestObject one = new TestObject("One");
 		TestObject two = new TestObject("Two");
 		TestObject three = new TestObject("Three");
+		TestObjectHolder four = new TestObjectHolder("Four", one); 
 		
 		TestObjectGroup group = new TestObjectGroup();
 		group.addTestObject(one);
 		group.addTestObject(two);
 		group.addTestObject(three);
+		group.addTestObject(four);
 		
 		int count = 0; 
 		
 		for (TestObject e : group.getTestObjectsList()) {
 			++count; 
+						
+			String message = e instanceof TestObjectHolder?
+					"Element " + count + " is holding " + ((TestObjectHolder) e).getElement() 
+					+ " and is " + e.getName() + "." : 
+						"Element " + count + " is " + e.getName() + ".";
 			
-			System.out.println("Element " + count + " is " + e.getName() + "."); 
+			System.out.println(message); 
 		}
 	}
 
