@@ -5,9 +5,9 @@ public class main {
 	{
 		// TODO Auto-generated method stub
 		
-		TestObject testObject = new TestObject("One"); 
+		//TestObject testObject = new TestObject("One"); 
 		
-		
+		createTestObjectList(); 
 	}
 	
 	private static void adjustTestObject(TestObject given)
@@ -19,6 +19,26 @@ public class main {
 		int changedValue = given.getValue() + 8; 
 		
 		System.out.println("Changed value is " + changedValue + "\n"); 
+	}
+	
+	private static void createTestObjectList()
+	{
+		TestObject one = new TestObject("One");
+		TestObject two = new TestObject("Two");
+		TestObject three = new TestObject("Three");
+		
+		TestObjectGroup group = new TestObjectGroup();
+		group.addTestObject(one);
+		group.addTestObject(two);
+		group.addTestObject(three);
+		
+		int count = 0; 
+		
+		for (TestObject e : group.getTestObjectsList()) {
+			++count; 
+			
+			System.out.println("Element " + count + " is " + e.getName() + "."); 
+		}
 	}
 
 }
