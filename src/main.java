@@ -31,7 +31,7 @@ public class main {
 		TestObject one = new TestObject("One");
 		TestObject two = new TestObject("Two");
 		TestObject three = new TestObject("Three");
-		TestObjectHolder four = new TestObjectHolder("Four", one); 
+		TestObjectHolder<TestObject> four = new TestObjectHolder<>("Four", one); 
 		
 		TestObjectGroup group = new TestObjectGroup();
 		group.addTestObject(one);
@@ -44,10 +44,12 @@ public class main {
 		GeneralMethods.TriFunction<Integer, TestObject, Object, String> parseTestObject 
 		= (index, e, object) -> 
 		{
+			String name = e.getName();
+			
 			return e instanceof TestObjectHolder?
-					"Element " + index + " is holding " + ((TestObjectHolder) e).getElement() 
-					+ " and is " + e.getName() + "." : 
-						"Element " + index + " is " + e.getName() + ".";
+					"Element " + index + " is holding " + object 
+					+ " and is " + name + "." : 
+						"Element " + index + " is " + name + ".";
 		};
 		
 		for (TestObject e : group.getTestObjectsList()) {
