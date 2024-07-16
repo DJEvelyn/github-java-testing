@@ -1,5 +1,6 @@
 import java.util.function.BiFunction;
 
+
 public class main {
 
 	public static void main(String[] args) 
@@ -40,19 +41,24 @@ public class main {
 		
 		int count = 0; 
 		
-		BiFunction<Integer, TestObject, String> getString = (index, e) -> 
+		GeneralMethods.TriFunction<Integer, TestObject, Object, String> parseTestObject 
+		= (index, e, object) -> 
 		{
 			return e instanceof TestObjectHolder?
 					"Element " + index + " is holding " + ((TestObjectHolder) e).getElement() 
 					+ " and is " + e.getName() + "." : 
 						"Element " + index + " is " + e.getName() + ".";
-		}; 
+		};
 		
 		for (TestObject e : group.getTestObjectsList()) {
 			++count; 
 			
-			System.out.println(getString.apply(count, e)); 
+			Object object = e instanceof TestObjectHolder? 
+					((TestObjectHolder) e).getElement() : null;
+			
+			System.out.println(parseTestObject.apply(count, e, object)); 
 		}
+		
 		
 		
 	}

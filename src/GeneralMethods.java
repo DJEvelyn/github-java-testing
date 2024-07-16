@@ -11,4 +11,9 @@ public class GeneralMethods
 				.collect(Collectors.toCollection(ArrayList::new)); 
 	}
 	
+	public interface TriFunction<T1, T2, T3, T4>
+	{
+		public T4 apply(T1 a, T2 b, T3 c); 
+	}
+	
 }
