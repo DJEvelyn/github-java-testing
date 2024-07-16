@@ -8,23 +8,9 @@ public class main {
 		
 		System.out.println("Git Testing project has just started"); 
 
-		TestObject testObject = new TestObject("One"); 
-		
-		
 		createTestObjectList(); 
 	}
-	
-	private static void adjustTestObject(TestObject given)
-	{
-		System.out.println("Adjusting test object " + given.getName() + "\n");
-		
-		System.out.println("Current value is " + given.getValue() + "\n"); 
-		
-		int changedValue = given.getValue() + 8; 
-		
-		System.out.println("Changed value is " + changedValue + "\n"); 
-	}
-	
+
 	private static void createTestObjectList()
 	{
 		TestObject one = new TestObject("One");
