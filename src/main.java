@@ -1,3 +1,4 @@
+import java.util.function.BiFunction;
 
 public class main {
 
@@ -39,16 +40,23 @@ public class main {
 		
 		int count = 0; 
 		
+		BiFunction<Integer, TestObject, String> getString = (index, e) -> 
+		{
+			return e instanceof TestObjectHolder?
+					"Element " + index + " is holding " + ((TestObjectHolder) e).getElement() 
+					+ " and is " + e.getName() + "." : 
+						"Element " + index + " is " + e.getName() + ".";
+		}; 
+		
 		for (TestObject e : group.getTestObjectsList()) {
 			++count; 
-						
-			String message = e instanceof TestObjectHolder?
-					"Element " + count + " is holding " + ((TestObjectHolder) e).getElement() 
-					+ " and is " + e.getName() + "." : 
-						"Element " + count + " is " + e.getName() + ".";
 			
-			System.out.println(message); 
+			System.out.println(getString.apply(count, e)); 
 		}
+		
+		
 	}
+	
+	
 
 }
