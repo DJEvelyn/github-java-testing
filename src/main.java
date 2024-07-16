@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.function.BiFunction;
 
 
@@ -19,13 +21,8 @@ public class main {
 		TestObject three = new TestObject("Three");
 		TestObjectHolder<TestObject> four = new TestObjectHolder<>("Four", one); 
 		
-		TestObjectGroup group = new TestObjectGroup();
-		group.addTestObject(one);
-		group.addTestObject(two);
-		group.addTestObject(three);
-		group.addTestObject(four);
+		System.out.println("Total test objects = " + TestObjectManager.getCount()); 
 		
-		int count = 0; 
 		
 		GeneralMethods.TriFunction<Integer, TestObject, Object, String> parseTestObject 
 		= (index, e, object) -> 
@@ -38,18 +35,25 @@ public class main {
 						"Element " + index + " is " + name + ".";
 		};
 		
-		for (TestObject e : group.getTestObjectsList()) {
-			++count; 
+		Iterator<TestObject> iterator = TestObjectManager.getList().iterator(); 
+		
+		int count = 0; 
+		
+		while (iterator.hasNext())
+		{
+			++ count; 
+			
+			TestObject e = iterator.next();
 			
 			Object object = e instanceof TestObjectHolder? 
 					((TestObjectHolder) e).getElement() : null;
 			
 			System.out.println(parseTestObject.apply(count, e, object)); 
 		}
-		
-		
-		
+
 	}
+	
+	
 	
 	
 

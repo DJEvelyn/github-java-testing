@@ -9,6 +9,8 @@ public class TestObject implements Named
 	{
 		this.name = name; 
 		this.value = 0; 
+		
+		TestObjectManager.addTestObject(this);
 	}
 
 	
